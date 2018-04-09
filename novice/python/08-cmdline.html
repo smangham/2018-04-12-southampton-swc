@@ -63,12 +63,10 @@ climate_data <span class="op">=</span> <span class="bu">open</span>(filename, <s
         <span class="co"># extract our max temperature in Fahrenheit - 4th column</span>
         fahr <span class="op">=</span> <span class="bu">float</span>(data[<span class="dv">3</span>])
 
-        <span class="co"># don&#39;t process invalid temperature readings of -9999</span>
-        <span class="cf">if</span> fahr <span class="op">!=</span> <span class="op">-</span><span class="dv">9999</span>:
-            celsius <span class="op">=</span> temp_conversion.fahr_to_celsius(fahr)
-            kelvin <span class="op">=</span> temp_conversion.fahr_to_kelvin(fahr)
+        celsius <span class="op">=</span> temp_conversion.fahr_to_celsius(fahr)
+        kelvin <span class="op">=</span> temp_conversion.fahr_to_kelvin(fahr)
 
-            <span class="bu">print</span>(<span class="st">&#39;Max temperature in Celsius&#39;</span>, celsius, <span class="st">&#39;Kelvin&#39;</span>, kelvin)</code></pre></div>
+        <span class="bu">print</span>(<span class="st">&#39;Max temperature in Celsius&#39;</span>, celsius, <span class="st">&#39;Kelvin&#39;</span>, kelvin)</code></pre></div>
 <p>And if we run that from the shell, with</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">python</span> climate_analysis.py ../data/sc_climate_data_10.csv</code></pre></div>
 <p>So we pass in the filename as argument that gets picked up and used. Handy! When we run it, we get the following (same as before):</p>
